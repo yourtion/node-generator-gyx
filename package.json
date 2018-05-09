@@ -1,0 +1,30 @@
+{
+  "name": "generator-gyx",
+  "version": "0.1.0",
+  "description": "My yeoman generator",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourtion/node-generator-gyx.git"
+  },
+  "keywords": [
+    "yourtion",
+    "yeoman",
+    "generator",
+    "yeoman-generator"
+  ],
+  "author": "Yourtion <yourtion@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourtion/node-generator-gyx/issues"
+  },
+  "homepage": "https://github.com/yourtion/node-generator-gyx#readme",
+  "dependencies": {
+    "yeoman-generator": "^2.0.5"
+  }
+}
