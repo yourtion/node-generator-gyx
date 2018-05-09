@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "My yeoman generator",
   "files": [
+    "utils.js",
     "generators"
   ],
   "scripts": {
