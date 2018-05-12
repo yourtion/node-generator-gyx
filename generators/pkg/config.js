@@ -1,2 +1,7 @@
-exports.TS_FILE = [["_tsconfig.json", "tsconfig.json"], ["_tslint.json", "tslint.json"], ["_index.ts", "src/index.ts"]];
-exports.TS_PACKAGE = ["typescript", "tslint"];
+exports.TS_FILE = [
+  ['tsconfig.json', 'tsconfig.json'],
+  ['tslint.json', 'tslint.json'],
+  ['index.ts', 'src/index.ts'],
+  ['.prettierrc.js', '.prettierrc.js'],
+];
+exports.TS_PACKAGE = ['typescript', 'tslint'];

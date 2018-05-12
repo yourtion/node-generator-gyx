@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
-const fs = require("fs");
+const fs = require('fs');
 
-exports.getGitOrigin = function getGitOrigin() {
-  let gitOrigin = "";
+function getGitOrigin(gitConfigFile) {
   try {
-    const gitConfig = fs.readFileSync("./.git/config", "utf-8");
-    const m = gitConfig.match(/\[remote\s+'origin']\s+url\s+=\s+(\S+)\s+/i);
+    const gitConfig = fs.readFileSync(gitConfigFile, 'utf-8');
+    const m = gitConfig.match(/\s+url\s+=\s+(\S+)\s+/i);
     if (m) {
-      gitOrigin = m[1];
+      return m[1].replace(/:/g, '/');
     }
-  } finally {
-    return gitOrigin;
+  } catch (_err) {
+    return;
   }
-};
+}
+exports.getGitOrigin = getGitOrigin;
