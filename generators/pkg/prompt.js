@@ -13,11 +13,20 @@ module.exports = function() {
       name: 'name',
       message: 'package name:',
       default: this.appname,
+      filter: name => {
+        return name && name.replace(/\s/g, '-').replace('node-', '');
+      },
+      validate: input => {
+        return !!input.match('^(?:@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$');
+      },
     },
     {
       name: 'version',
       message: 'version:',
       default: '1.0.0',
+      validate: input => {
+        return !!input.match(/\d+\.\d+\.\d+/);
+      },
     },
     {
       type: 'input',
@@ -27,7 +36,7 @@ module.exports = function() {
     {
       name: 'author',
       default: `${this.user.git.name()} <${this.user.git.email()}>`,
-      message: 'author',
+      message: 'author:',
     },
     {
       name: 'repo',
@@ -42,9 +51,9 @@ module.exports = function() {
     },
     {
       name: 'keywords',
-      message: 'keywords',
+      message: 'keywords:',
       filter: words => {
-        return words.split(/\s*,\s*/g);
+        return words && words.split(/\s+|,/g);
       },
     },
     {
