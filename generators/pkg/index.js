@@ -1,7 +1,8 @@
+'use strict';
+
 const Generator = require('yeoman-generator');
 
-const prompts = require('./prompt');
-const { genPackage } = require('../../utils');
+const { genPackage, prompts } = require('../../utils/npm');
 const { TS_FILE, TS_PACKAGE } = require('./config');
 
 module.exports = class extends Generator {

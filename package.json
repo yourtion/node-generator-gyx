@@ -1,13 +1,13 @@
 {
   "name": "generator-gyx",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "My yeoman generator",
   "files": [
-    "utils.js",
+    "utils",
     "generators"
   ],
   "scripts": {
-    "lint": "eslint generators utils.js --fix",
+    "lint": "eslint generators utils --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
