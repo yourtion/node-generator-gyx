@@ -28,7 +28,7 @@ module.exports = class extends Generator {
     const packageInfo = this.fs.readJSON(this.templatePath(this.lang + '/package.json'));
     this.fs.extendJSON(this.destinationPath('package.json'), genPackage(packageInfo, this.prop));
     if (this.isTS) {
-      for (const [src, dist] of TS_FILE) {
+      for (const [ src, dist ] of TS_FILE) {
         this.fs.copy(this.templatePath('typescript/' + src), this.destinationPath(dist));
       }
     }

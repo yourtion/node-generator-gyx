@@ -1,13 +1,13 @@
 const { getGitOrigin } = require('../../utils');
 
-module.exports = function() {
+module.exports = function () {
   const repo = getGitOrigin(this.destinationPath('./.git/config'));
   return [
     {
       type: 'list',
       name: 'language',
       message: 'Please choose Language:',
-      choices: ['TypeScript', 'JavaScript'],
+      choices: [ 'TypeScript', 'JavaScript' ],
     },
     {
       name: 'name',
@@ -35,7 +35,7 @@ module.exports = function() {
     },
     {
       name: 'author',
-      default: `${this.user.git.name()} <${this.user.git.email()}>`,
+      default: `${ this.user.git.name() } <${ this.user.git.email() }>`,
       message: 'author:',
     },
     {
@@ -61,7 +61,7 @@ module.exports = function() {
       name: 'license',
       default: 'MIT',
       message: 'license:',
-      choices: ['MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0'],
+      choices: [ 'MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0' ],
     },
   ];
 };
