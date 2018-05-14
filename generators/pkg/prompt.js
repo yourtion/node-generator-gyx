@@ -7,15 +7,12 @@ module.exports = function () {
       type: 'list',
       name: 'language',
       message: 'Please choose Language:',
-      choices: [ 'TypeScript', 'JavaScript' ],
+      choices: ['TypeScript', 'JavaScript'],
     },
     {
       name: 'name',
       message: 'package name:',
-      default: this.appname,
-      filter: name => {
-        return name && name.replace(/\s/g, '-').replace('node-', '');
-      },
+      default: this.appname && this.appname.replace(/\s/g, '-').replace('node-', ''),
       validate: input => {
         return !!input.match('^(?:@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$');
       },
@@ -42,8 +39,8 @@ module.exports = function () {
       name: 'repo',
       default: repo,
       message: 'git repository:',
-      filter: words => {
-        return words
+      filter: repo => {
+        return repo
           .replace(/https?:\/\//, '')
           .replace(/^(.*?)@/, '')
           .replace(/.git$/, '');
@@ -61,7 +58,7 @@ module.exports = function () {
       name: 'license',
       default: 'MIT',
       message: 'license:',
-      choices: [ 'MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0' ],
+      choices: ['MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0'],
     },
   ];
 };
