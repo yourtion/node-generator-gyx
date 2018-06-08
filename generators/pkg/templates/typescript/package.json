@@ -8,9 +8,9 @@
   "scripts": {
     "pretest": "npm run lint && tsc",
     "tag": "git tag v`node -p 'require(\"./package\").version'`",
-    "lint": "tslint --project tsconfig.json --fix",
+    "lint": "prettier --write src/**/*.ts",
     "clean": "rm -rf dist",
     "compile": "tsc",
-    "prepublishOnly": "npm run clean && npm run test:cov"
+    "prepublishOnly": "npm run clean && npm run compile"
   }
 }

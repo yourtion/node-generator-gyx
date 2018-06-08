@@ -4,4 +4,4 @@ exports.TS_FILE = [
   [ 'index.ts', 'src/index.ts' ],
   [ '.prettierrc.js', '.prettierrc.js' ],
 ];
-exports.TS_PACKAGE = [ 'typescript', 'tslint' ];
+exports.TS_PACKAGE = [ 'typescript' ];

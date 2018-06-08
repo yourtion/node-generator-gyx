@@ -2,7 +2,7 @@
 
 const { getGitOrigin } = require('./utils');
 
-exports.genPackage = (base, addtion) => {
+exports.genPackage = function genPackage(base, addtion) {
   const pkg = {
     name: addtion.name,
     version: addtion.version,
@@ -25,7 +25,7 @@ exports.genPackage = (base, addtion) => {
   return pkg;
 };
 
-exports.prompts = () => {
+exports.prompts = function prompts() {
   const repo = getGitOrigin(this.destinationPath('./.git/config'));
   return [
     {
