@@ -3,7 +3,7 @@
 const Generator = require('yeoman-generator');
 
 const { genPackage, prompts } = require('../../utils/npm');
-const { TS_FILE, TS_PACKAGE } = require('./config');
+const { TS_FILE, TS_DEV_PACKAGE } = require('./config');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -29,7 +29,7 @@ module.exports = class extends Generator {
     const packageInfo = this.fs.readJSON(this.templatePath(this.lang + '/package.json'));
     this.fs.extendJSON(this.destinationPath('package.json'), genPackage(packageInfo, this.prop));
     if (this.isTS) {
-      for (const [ src, dist ] of TS_FILE) {
+      for (const [src, dist] of TS_FILE) {
         this.fs.copy(this.templatePath('typescript/' + src), this.destinationPath(dist));
       }
     }
@@ -37,7 +37,7 @@ module.exports = class extends Generator {
 
   install() {
     if (this.isTS) {
-      this.npmInstall(TS_PACKAGE, { 'save-dev': true, registry: 'https://registry.npm.taobao.org' });
+      this.npmInstall(TS_DEV_PACKAGE, { 'save-dev': true, registry: 'https://registry.npm.taobao.org' });
     }
   }
 };

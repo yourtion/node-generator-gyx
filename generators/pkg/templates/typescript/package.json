@@ -5,10 +5,13 @@
     "dist/index.d.ts",
     "dist/index.js"
   ],
+  "peerDependencies": {
+    "@types/node": "*"
+  },
   "scripts": {
     "pretest": "npm run lint && tsc",
     "tag": "git tag v`node -p 'require(\"./package\").version'`",
-    "lint": "prettier --write src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
     "clean": "rm -rf dist",
     "compile": "tsc",
     "prepublishOnly": "npm run clean && npm run compile"
