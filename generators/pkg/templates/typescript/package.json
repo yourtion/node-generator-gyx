@@ -2,18 +2,20 @@
   "main": "dist/index.js",
   "typing": "dist/index.d.ts",
   "files": [
-    "dist/index.d.ts",
-    "dist/index.js"
+    "dist/*.d.ts",
+    "dist/*.js"
   ],
   "peerDependencies": {
     "@types/node": "*"
   },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5"
+  },
   "scripts": {
-    "pretest": "npm run lint && tsc",
-    "tag": "git tag v`node -p 'require(\"./package\").version'`",
-    "format": "prettier --write src/**/*.ts",
-    "clean": "rm -rf dist",
-    "compile": "tsc",
-    "prepublishOnly": "npm run clean && npm run compile"
+    "format": "prettier --write \"src/**/*.ts\"",
+    "compile": "rm -rf dist && tsc",
+    "prepublishOnly": "npm run format && npm run compile",
+    "postpublish": "git tag v`node -p 'require(\"./package\").version'`"
   }
 }
