@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "rootDir": "src",
-    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "declaration": false,
+    "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true,
-    "esModuleInterop": true,
-    "strict": true,
+    "outDir": "dist",
     "noUnusedLocals": true,
-    "pretty": true,
+    "pretty": true
   }
 }
