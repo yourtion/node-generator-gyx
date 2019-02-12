@@ -1,6 +1,6 @@
 {
   "name": "generator-gyx",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "My yeoman generator",
   "files": [
     "utils",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/yourtion/node-generator-gyx#readme",
   "dependencies": {
-    "yeoman-generator": "^2.0.5"
+    "yeoman-generator": "^3.2.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
