@@ -27,10 +27,10 @@
   },
   "homepage": "https://github.com/yourtion/node-generator-gyx#readme",
   "dependencies": {
-    "yeoman-generator": "^2.0.5"
+    "yeoman-generator": "^4.0.1"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-guo": "^0.8.0"
+    "eslint": "^6.2.2",
+    "eslint-config-guo": "^0.10.0"
   }
 }
