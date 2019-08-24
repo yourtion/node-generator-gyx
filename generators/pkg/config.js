@@ -3,4 +3,4 @@ exports.TS_FILE = [
   [ 'index.ts', 'src/index.ts' ],
   [ '.prettierrc.js', '.prettierrc.js' ],
 ];
-exports.TS_PACKAGE = [ 'typescript' ];
+exports.TS_DEV_PACKAGE = ['typescript', '@types/node', 'prettier'];
